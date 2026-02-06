@@ -1,37 +1,41 @@
 package in.codingage.blooms.models;
 
+
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.annotation.Collation;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.management.relation.Role;
-@Document(collection = "User")
-public class User {
-    @Id
+import java.util.Collection;
+
+@Document(collection = "admin")
+public class Admin {
+
+   @Id
     private String id;
-    private String username;
+    private String adminName;
     private String email;
-    private String name;
+    private  String name;
     private String profileUrl;
     private String password;
-    private  boolean isActive;
-    private  Role role;
+
+
+    public Admin(){
+
+    }
 
     public String getId() {
         return id;
     }
 
-
     public void setId(String id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return this.username;
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
     public String getEmail() {
@@ -46,6 +50,10 @@ public class User {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getProfileUrl() {
         return profileUrl;
     }
@@ -54,29 +62,11 @@ public class User {
         this.profileUrl = profileUrl;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean isActive() {
-       return  isActive();
-    }
-    public  void setActive(boolean active){
-        isActive=active;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-    public  void  setRole(Role role){
-        this.role=role;
     }
 }

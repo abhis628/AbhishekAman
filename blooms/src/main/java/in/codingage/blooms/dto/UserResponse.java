@@ -1,11 +1,16 @@
 package in.codingage.blooms.dto;
 
+import javax.management.relation.Role;
+
 public class UserResponse {
     private String id;
     private String username;
     private  String email;
     private String name;
     private  String profileUrl;
+    private Role role;
+    private UserResponse userResponse;
+
     public UserResponse(){
 
     }
@@ -35,8 +40,8 @@ public class UserResponse {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail(String email) {
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -57,5 +62,17 @@ public class UserResponse {
 
     public void setProfileUrl(String profileUrl) {
         this.profileUrl = profileUrl;
+    }
+
+    public void setUserId(String id) {
+        this.id=id;
+    }
+
+    public void setRole(Role role) {
+        this.role=role;
+    }
+
+    public void add(UserResponse userResponse) {
+        this.userResponse=userResponse;
     }
 }

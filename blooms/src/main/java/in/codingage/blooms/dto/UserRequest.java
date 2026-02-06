@@ -1,20 +1,24 @@
 package in.codingage.blooms.dto;
 
+import javax.management.relation.Role;
+
 public class UserRequest {
     private String id;
+    private String userId;
     private String username;
     private String email;
     private String name;
     private String password;
     private String profileUrl;
-
+   private Role role;
 
     public UserRequest() {
 
     }
 
-    public UserRequest(String username, String email, String name, String password, String profileUrl) {
-    this.username=username;
+    public UserRequest(String userId, String username, String email, String name, String password, String profileUrl) {
+       this.userId=userId;
+        this.username=username;
      this.email=email;
      this.name=name;
      this.password=password;
@@ -67,5 +71,19 @@ public class UserRequest {
 
     public void setProfileUrl(String profileUrl) {
         this.profileUrl = profileUrl;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId){
+        this.userId=userId;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+    public void setRole(Role role){
+        this.role=role;
     }
 }
